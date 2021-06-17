@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/react-scramble-text.svg)](https://www.npmjs.com/package/react-scramble-text) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![Demo](https://raw.githubusercontent.com/crnorthc/react-scramble-text/master/src/preview.gif)]
+![Demo](https://raw.githubusercontent.com/crnorthc/react-scramble-text/master/src/preview.gif)
 
 ## Install
 
