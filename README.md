@@ -35,8 +35,12 @@ class Example extends Component {
 
 | Property | Type | Default | Description |
 |:--------------|:-------------------|:--------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-|`speed` | number | 80 | The speed of the symbol alterations in ms. |
-
+| `phrases` | list of strings | None | The list of phrases to be used. |
+| `speed` | number | 80 | The speed of the symbol alterations in ms. |
+| `pauseTime` | number | 1000 | The length of time a phrase is shown before transition to the next. |
+| `chars` | string | "!<>-_\\/[]{}—=+*^?#________" | The symbols to be used randomly in phrase transitions. |
+| `repetitions` | number | -1 | The number of times the phrases should be shown (default in infinite). |
+| `symbolColor` | string | "rgb(143, 143, 143)" | The color of the symbols used in phrase transitions. |
 
 ## License
 
