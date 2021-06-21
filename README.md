@@ -24,7 +24,6 @@ class Example extends Component {
   render() {
     const phrases = ["The way to get started is to", "quit talking", "and", "begin doing", "-Walt Disney"]
     return <TextScrambler phrases={phrases}
-                          darkTheme={false}
                           speed={50}
                           pauseTime={800}/>
   }
