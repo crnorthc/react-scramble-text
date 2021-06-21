@@ -11,8 +11,9 @@ function TextScrambler(props) {
   const [pauseTime, setPauseTime] = useState(1000)
   const [steps, setSteps] = useState([false, false, false])
   const [phrases, setPhrases] = useState()
-  const chars = '!<>-_\\/[]{}—=+*^?#________'
-
+  const [repetitions, setRepetitions] = useState(0)
+  const [maxReps, setMaxReps] = useState(-1)
+  const [chars, setChars] = useState('!<>-_\\/[]{}—=+*^?#________')
 
 
   function swapLetters() {
@@ -79,6 +80,7 @@ function TextScrambler(props) {
   }
 
   function nextWord(index, word) {
+    setRepetitions(repetitions + 1)
     setCount(index)
     setNextMessage(phrases[word])
     setSteps([false, false, false])
@@ -91,6 +93,12 @@ function TextScrambler(props) {
     if (props.pauseTime !== undefined) {
       setPauseTime(props.pauseTime)
     }
+    if (props.chars !== undefined) {
+      setChars(props.chars)
+    }
+    if (props.repetitions !== undefined) {
+      setMaxReps(props.repetitions)
+    }
     if (props.phrases !== undefined) {
       setPhrases(props.phrases)
     } else {
@@ -99,6 +107,10 @@ function TextScrambler(props) {
 
     const interval = setInterval(() => {
       setTime(speed)
+
+      if (repetitions === maxReps) {
+        return () => clearInterval(interval)
+      }
 
       if (message !== nextMessage) {
         if (!steps[0]) {
@@ -139,11 +151,23 @@ function TextScrambler(props) {
   })
 
   const JSXify = (item) => {
+    var style
+    if (props.symbolColor !== undefined) {
+      style = {
+        color: props.symbolColor
+      }
+    }
+    else {
+      style = {
+        color: "rgb(143, 143, 143)"
+      }
+    }
+
     if (message != null) {
       var jsx = []
       for (let i = 0; i < item.length; i++) {
         if (chars.includes(item[i])) {
-          jsx.push(<span className={styles.symbol}>{item[i]}</span>)
+          jsx.push(<span style={style}>{item[i]}</span>)
         } else {
           jsx.push(<span>{item[i]}</span>)
         }
@@ -151,13 +175,7 @@ function TextScrambler(props) {
       return jsx
     }
   }
-  if (props.darkTheme) {
-    return <div className={styles.darkTheme}>{JSXify(message)}</div>
-  }
-  else {
-    return <div className={styles.normalTheme}>{JSXify(message)}</div>
-  }
-
+  return <div className={styles.normalTheme}>{JSXify(message)}</div>
 }
 
 export default TextScrambler

@@ -22,14 +22,20 @@ import 'react-scramble-text/dist/index.css'
 
 class Example extends Component {
   render() {
-    const phrases = ["Hello", "Welcome to my Page!", "Enjoy your visit!"]
-    return <TextScrambler phrases={phrases
+    const phrases = ["The way to get started is to", "quit talking", "and", "begin doing", "-Walt Disney"]
+    return <TextScrambler phrases={phrases}
                           darkTheme={false}
                           speed={50}
-                          pauseTime={800}}/>
+                          pauseTime={800}/>
   }
 }
 ```
+
+## Props
+
+| Property      | Type               | Default                               | Description                                                                                                                                  |
+|:--------------|:-------------------|:--------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
+
 
 ## License
 
