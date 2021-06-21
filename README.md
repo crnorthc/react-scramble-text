@@ -9,7 +9,7 @@
 ## Install
 
 ```bash
-npm install --save react-scramble-text
+npm i react-scramble-text
 ```
 
 ## Usage
