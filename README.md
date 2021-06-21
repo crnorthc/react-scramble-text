@@ -33,9 +33,9 @@ class Example extends Component {
 
 ## Props
 
-| Property| Type| Default| Description|
-|:--------------|:-------------------|:--------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-
+| Property | Type | Default | Description |
+|`speed` | number | 80 | The speed of the symbol alterations in ms. |
+ 
 
 ## License
 
